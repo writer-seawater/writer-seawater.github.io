@@ -126,7 +126,7 @@ section h2 {
     color: #666;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis; /* 넘치는 부분은 ...으로 표시 */
     padding-bottom: 5px;
