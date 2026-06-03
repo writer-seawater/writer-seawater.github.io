@@ -93,7 +93,7 @@ p {
     background-color: #faf9fc;
     border: 1px solid #e8e6ed;
     position: relative;   /* 자식(날짜)의 위치를 잡기 위해 필수 */
-    min-height: 200px;    /* 카드 높이를 어느 정도 확보해야 날짜가 잘 보여 */
+    min-height: 250px;    /* 카드 높이를 어느 정도 확보해야 날짜가 잘 보여 */
     padding-bottom: 10px;
 }
 
