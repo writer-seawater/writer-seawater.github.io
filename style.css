@@ -97,10 +97,6 @@ p {
     padding-bottom: 10px;
 }
 
-.post-card p {
-    margin-bottom: 0px;
-}
-
 .post-card:hover {
     box-shadow: 0 4px 6px rgba(0,0,0,0.03); /* 마우스 올리면 그림자 생김 */
 }
@@ -134,6 +130,7 @@ section h2 {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis; /* 넘치는 부분은 ...으로 표시 */
     padding-bottom: 5px;
+    margin-top: 0px;
 }
 
 .card-link {
