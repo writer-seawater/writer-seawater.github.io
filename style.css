@@ -17,6 +17,7 @@ body {
     font-size: 0.8em;
     border-bottom: 1px solid #eee;
 }
+
 .feed-container {
     max-width: 800px; /* 💡 중요: 텍스트 블로그는 가로폭이 700~750px일 때 시선이 분산 안 되고 가장 잘 읽힙니다 */
     margin: 0 auto;   /* 화면 가운데 정렬 */
