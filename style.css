@@ -17,28 +17,31 @@ body {
     font-size: 0.8em;
     border-bottom: 1px solid #eee;
 }
-
 .feed-container {
     max-width: 800px; /* 💡 중요: 텍스트 블로그는 가로폭이 700~750px일 때 시선이 분산 안 되고 가장 잘 읽힙니다 */
     margin: 0 auto;   /* 화면 가운데 정렬 */
     padding: 0px 20px;
 }
 
+/* 3. 전체 링크 스타일 정리 */
 .post-link {
     text-decoration: none;
     color: inherit;
     display: block; /* 링크 영역을 한 줄 전체로 확장 */
 }
 
+/* 4. 하나의 글 영역 (상자 테두리를 빼고 세로로 정렬) */
 .post-item {
     padding: 32px 0; /* 위아래로 여유로운 공간을 주어 가독성 확보 */
     border-bottom: 1px solid #f1f3f5; /* 글과 글 사이를 가르는 극도로 은은한 선 */
 }
 
+/* 마우스 올렸을 때 제목만 살짝 반응하게 만드는 투명도 효과 */
 .post-item:hover .post-title {
     opacity: 0.8;
 }
 
+/* 5. 메타데이터 (카테고리 & 날짜) */
 .post-meta {
     display: flex;
     gap: 12px; /* 카테고리와 날짜 사이의 간격 */
@@ -55,6 +58,7 @@ body {
     color: #8b95a1; /* 차분한 회색 */
 }
 
+/* 6. 글 제목 */
 .post-title {
     font-size: 1.5rem; /* 가로로 넓어졌으므로 제목을 시원하게 키움 */
     font-weight: 700;
@@ -64,11 +68,14 @@ body {
     letter-spacing: -0.02em;
 }
 
+/* 7. 본문 요약 (3줄 제한 말줄임표) */
 .post-summary {
     font-size: 1.0rem;
     line-height: 1.65; /* 행간을 넓혀 문장이 빽빽해 보이지 않게 조절 */
     color: #555555;   /* 본문 텍스트 톤다운 */
     margin: 0;
+    
+    /* 가로폭 전체를 채우되, 너무 길어지면 3줄에서 자르기 */
     display: -webkit-box;
     -webkit-line-clamp: 3; 
     -webkit-box-orient: vertical;
@@ -82,7 +89,7 @@ h1 {
   border-bottom: 2px solid #333;
   padding-bottom: 5px;
 }
-
+/* 마크다운 느낌을 살린 인용구 스타일 */
 blockquote {
     border-left: 4px solid #ccc;
     padding-left: 20px;
@@ -90,25 +97,30 @@ blockquote {
     font-style: italic;
 }
 
-
+/* 메뉴바 스타일 */
 nav {
     font-family: 'Inter', 'Noto Sans KR', sans-serif;
-    background-color: #e5e2ef;
-    padding: 15px;
-    margin-bottom: 30px;
-    border-radius: 5px;
+    background-color: transparent; /* 💡 배경색을 투명하게 해서 박스를 제거 */
+    padding: 20px 0;               /* 위아래 여백은 주되, 좌우는 피드 폭에 맞추기 위해 0 */
+    margin-bottom: 40px;
+    border-bottom: 1px solid #f1f3f5; /* 💡 하단에만 은은한 구분선 추가 */
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav a {
     font-family: 'Inter', 'Noto Sans KR', sans-serif;
-    margin-right: 20px;
+    margin-right: 24px;
     text-decoration: none;
-    color: #4a4a4a;
-    font-weight: bold;
+    color: #6b6b6b; /* 💡 글자색을 약간 부드러운 회색으로 변경 */
+    font-size: 0.95rem;
+    font-weight: 500; /* 너무 두꺼운 볼드 대신 정갈한 중간 두께로 */
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #0066cc; /* 마우스를 올렸을 때 색상 변화 */
+    color: #03a87c; /* 💡 아까 메인 본문의 카테고리 색상과 통일 (딥그린) */
 }
 
 .highlight-red {
