@@ -3,19 +3,84 @@
 }
 
 body {
-        font-family: 'Inter', 'Noto Sans KR', sans-serif;
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
         line-height: 1.6;
-        max-width: 1000px;
+        max-width: 800px;
         margin: auto;
         padding: 60px 20px;
-        background-color: #f4f2f9;
-        color: #333333;
+        background-color: #ffffff;
+        color: #242424;
 }
 
 .info {
     font-family: 'Inter', 'Noto Sans KR', sans-serif;
     font-size: 0.8em;
     border-bottom: 1px solid #eee;
+}
+.feed-container {
+    max-width: 800px; /* 💡 중요: 텍스트 블로그는 가로폭이 700~750px일 때 시선이 분산 안 되고 가장 잘 읽힙니다 */
+    margin: 0 auto;   /* 화면 가운데 정렬 */
+    padding: 0px 20px;
+}
+
+/* 3. 전체 링크 스타일 정리 */
+.post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* 링크 영역을 한 줄 전체로 확장 */
+}
+
+/* 4. 하나의 글 영역 (상자 테두리를 빼고 세로로 정렬) */
+.post-item {
+    padding: 32px 0; /* 위아래로 여유로운 공간을 주어 가독성 확보 */
+    border-bottom: 1px solid #f1f3f5; /* 글과 글 사이를 가르는 극도로 은은한 선 */
+}
+
+/* 마우스 올렸을 때 제목만 살짝 반응하게 만드는 투명도 효과 */
+.post-item:hover .post-title {
+    opacity: 0.8;
+}
+
+/* 5. 메타데이터 (카테고리 & 날짜) */
+.post-meta {
+    display: flex;
+    gap: 12px; /* 카테고리와 날짜 사이의 간격 */
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.post-category {
+    color: #03a87c; /* 포인트가 되는 딥그린 */
+    font-weight: 600;
+}
+
+.post-date {
+    color: #8b95a1; /* 차분한 회색 */
+}
+
+/* 6. 글 제목 */
+.post-title {
+    font-size: 1.5rem; /* 가로로 넓어졌으므로 제목을 시원하게 키움 */
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+/* 7. 본문 요약 (3줄 제한 말줄임표) */
+.post-summary {
+    font-size: 1.0rem;
+    line-height: 1.65; /* 행간을 넓혀 문장이 빽빽해 보이지 않게 조절 */
+    color: #555555;   /* 본문 텍스트 톤다운 */
+    margin: 0;
+    
+    /* 가로폭 전체를 채우되, 너무 길어지면 3줄에서 자르기 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
       
 h1 {
@@ -75,32 +140,6 @@ p {
     margin-bottom: 1em;
 }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30 px;
-    justify-content: space-between;
-}
-
-.post-card {
-    font-family: 'Inter', 'Noto Sans KR', sans-serif;
-    display: flex;
-    flex-direction: column;
-    height: 180px;
-    border-radius: 0px; /* 모서리 곡률 조정 */
-    padding: 20px;
-    transition: 0.3s;    /* 마우스 올렸을 때 부드러운 효과 */
-    background-color: #faf9fc;
-    border: 1px solid #e8e6ed;
-    position: relative;   /* 자식(날짜)의 위치를 잡기 위해 필수 */
-    min-height: 270px;    /* 카드 높이를 어느 정도 확보해야 날짜가 잘 보여 */
-    padding-bottom: 10px;
-}
-
-.post-card:hover {
-    box-shadow: 0 4px 6px rgba(0,0,0,0.03); /* 마우스 올리면 그림자 생김 */
-}
-
 section {
     margin-bottom: 20px; /* 각 섹션 간의 여백을 넉넉히 줌 */
     clear: both;         /* 이 섹션이 끝나면 앞의 정렬을 해제하고 아래로 내려감 */
@@ -112,72 +151,6 @@ section h2 {
     font-family: 'Noto Sans KR', serif; /* 예: 명조체 계열로 변경 */
     color: #1A365D;
     font-weight: 700;
-}
-
-.post-card h3 {
-    font-size: 1.2rem;   /* 본문보다 살짝 크게 */
-    margin: 0 0 10px 0;  /* 제목 아래 간격 */
-    text-decoration: none; /* 밑줄 제거 */
-    color: #1A237E;
-}
-
-.post-card p {
-    font-size: 0.9rem;   /* 본문보다 작게 해서 요약임을 강조 */
-    color: #666;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis; /* 넘치는 부분은 ...으로 표시 */
-    padding-bottom: 5px;
-}
-
-.card-link {
-    text-decoration: none; /* 링크 밑줄 제거 */
-    color: inherit;        /* 글자 색을 부모와 똑같이 */
-    display: block;        /* 영역 전체를 클릭 가능하게 */
-    /* 3개씩 배치할 때: 33.33%에서 간격만큼 빼줌 */
-    width: calc(50% - 20px);
-    margin-left: 10px; 
-    margin-right: 10px; /* 오른쪽 간격 */
-    margin-bottom: 20px;
-}
-
-.card-link:hover .post-card {
-    transform: translateY(-5px); /* 살짝 떠오르는 효과 */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.card-date {
-    position: absolute;   /* 카드 안에서 자유롭게 위치 이동 */
-    bottom: 20px;         /* 카드 맨 아래에서 20px 위 */
-    right: 20px;          /* 카드 오른쪽에서 20px 안쪽 */
-    font-size: 0.8rem;    /* 작은 글씨 */
-    color: #888;          /* 연한 회색 */
-}
-
-.more-button-container {
-    display: block;
-    width: 100%;
-    text-align: right;
-    margin-top: 10px;
-    padding-right: 10px;
-}
-
-.more-button {
-    font-family: 'Inter', 'Noto Sans KR', sans-serif;
-    padding: 10px 20px;
-    background-color: none;
-    color: #1A365D;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s;
-    padding: 5px 0;
-}
-
-.more-button:hover {
-    text-decoration: underline;
-    color: #1E3799;
 }
 
 footer p {
