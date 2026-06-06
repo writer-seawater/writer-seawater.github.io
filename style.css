@@ -165,7 +165,7 @@ footer p {
     margin-top: 20px;        /* 본문과의 거리 확보 */
     font-size: 0.85rem;      /* 글자 크기를 살짝 작게 */
     color: #888;          /* 연한 회색으로 부담스럽지 않게 */
-    border-top: 1px solid #eee; /* 위쪽에 가벼운 선 추가 */
+    /* border-top: 1px solid #eee; /* 위쪽에 가벼운 선 추가 */
 }
 
 body, p, .post-content {
