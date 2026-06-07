@@ -189,3 +189,33 @@ body, p, .post-content {
     color: #2c3e50;         /* 색상 강조 */
     font-family: monospace; /* 날짜 느낌이 나도록 고정폭 글꼴 사용 */
 }
+
+/* 📸 포스트 내부 이미지 스타일 */
+.post-image {
+    display: block;          /* 이미지를 한 줄을 통째로 차지하는 블록으로 변경 */
+    max-width: 100%;         /* 💡 중요: 본문 폭(720px)보다 이미지가 크더라도 화면 밖으로 깨지지 않게 방지 */
+    width: 400px;
+    height: auto;            /* 가로 비율에 맞춰 세로 높이 자동 조절 */
+    margin: 32px auto;       /* 💡 위아래로 32px 여백을 주고, 좌우 'auto'로 중앙 정렬 */
+    border-radius: 8px;      /* 이미지 모서리를 미세하고 부드럽게 깎아줌 */
+}
+
+/* 📸 이미지 두 장을 감싸는 가로 상자 */
+.image-row {
+    display: flex;          /* 💡 자식 요소들을 가로로 나란히 정렬하는 치트키 */
+    gap: 16px;              /* 사진과 사진 사이의 은은한 간격 (여백) */
+    max-width: 100%;        /* 본문 폭(720px)을 넘지 않도록 제한 */
+    margin: 32px auto;      /* 위아래 본문과의 여백을 주고 중앙 정렬 */
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* 📸 가로 상자 안의 이미지들에게만 적용되는 스타일 */
+.image-row img {
+    width: auto;    
+    height: 300px;  
+    object-fit: cover;      /* 💡 혹시 두 사진의 원래 세로 높이가 다르다면, 삐져나오지 않게 예쁘게 크롭해줌 */
+    border-radius: 6px;     /* 모서리를 살짝 깎아 정갈함 추가 */
+    max-width: 50%;         /* 💡 [방어막] 3장이니까 한 장당 상자 크기의 30%를 절대 넘지 못하게 제한 */
+    object-fit: cover;
+}
