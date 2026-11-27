@@ -1,0 +1,12 @@
+.RData
+.Rhistory
+.DS_Store
+template.html
+update_index.R
+update_index_original.R
+update_index_claude.R
+generate_sitemap.r
+index_update_test.html
+index_PostCard.html
+style_PostCard.css
+style_original.css
