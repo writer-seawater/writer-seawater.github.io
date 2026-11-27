@@ -1,3 +1,6 @@
+/* ==========================================================================
+   기본 설정
+   ========================================================================== */
 * {
     box-sizing: border-box; /* 패딩과 테두리를 너비에 포함시킴 */
 }
@@ -8,139 +11,21 @@ html, body {
 }
 
 body {
-        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: auto;
-        padding: 20px 20px;
-        background-color: #ffffff;
-        color: #242424;
-}
-
-.info {
-    font-family: 'Inter', 'Noto Sans KR', sans-serif;
-    font-size: 0.8em;
-    border-bottom: 1px solid #eee;
-}
-.feed-container {
-    max-width: 800px; /* 💡 중요: 텍스트 블로그는 가로폭이 700~750px일 때 시선이 분산 안 되고 가장 잘 읽힙니다 */
-    margin: 0 0 0 0;   /* 화면 가운데 정렬 */
-    padding: 0px 0px;
-}
-
-/* 3. 전체 링크 스타일 정리 */
-.post-link {
-    text-decoration: none;
-    color: inherit;
-    display: block; /* 링크 영역을 한 줄 전체로 확장 */
-}
-
-/* 4. 하나의 글 영역 (상자 테두리를 빼고 세로로 정렬) */
-.post-item {
-    padding: 32px 0; /* 위아래로 여유로운 공간을 주어 가독성 확보 */
-    border-bottom: 1px solid #f1f3f5; /* 글과 글 사이를 가르는 극도로 은은한 선 */
-}
-
-/* 마우스 올렸을 때 제목만 살짝 반응하게 만드는 투명도 효과 */
-.post-item:hover .post-title {
-    opacity: 0.8;
-}
-
-/* 5. 메타데이터 (카테고리 & 날짜) */
-.post-meta {
-    display: flex;
-    gap: 12px; /* 카테고리와 날짜 사이의 간격 */
-    margin-bottom: 10px;
-    font-size: 0.85rem;
-}
-
-.post-category {
-    color: #03a87c; /* 포인트가 되는 딥그린 */
-    font-weight: 600;
-}
-
-.post-date {
-    color: #8b95a1; /* 차분한 회색 */
-}
-
-/* 6. 글 제목 */
-.post-title {
-    font-size: 1.5rem; /* 가로로 넓어졌으므로 제목을 시원하게 키움 */
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 0 0 12px 0;
-    line-height: 1.3;
-    letter-spacing: -0.02em;
-}
-
-/* 7. 본문 요약 (3줄 제한 말줄임표) */
-.post-summary {
-    font-size: 1.0rem;
-    line-height: 1.65; /* 행간을 넓혀 문장이 빽빽해 보이지 않게 조절 */
-    color: #555555;   /* 본문 텍스트 톤다운 */
-    margin: 0;
-    
-    /* 가로폭 전체를 채우되, 너무 길어지면 3줄에서 자르기 */
-    display: -webkit-box;
-    -webkit-line-clamp: 3; 
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-      
-h1 {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  color: #1a1a1a;
-  border-bottom: 2px solid #333;
-  padding-bottom: 5px;
-}
-/* 마크다운 느낌을 살린 인용구 스타일 */
-blockquote {
-    border-left: 4px solid #ccc;
-    padding-left: 20px;
-    color: #666;
-    font-style: italic;
-}
-
-/* 메뉴바 스타일 */
-nav {
-    font-family: 'Inter', 'Noto Sans KR', sans-serif;
-    background-color: transparent; /* 💡 배경색을 투명하게 해서 박스를 제거 */
-    padding: 10px 0 20px 0;               /* 위 오른쪽 아래 왼쪽 순서 */
-    margin-bottom: 40px;
-    border-bottom: 1px solid #f1f3f5; /* 💡 하단에만 은은한 구분선 추가 */
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.05rem;
+    line-height: 1.75; /* 명조체는 줄 간격이 넓어야 보기 좋다 */
+    color: #333;
+    background-color: #ffffff;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    padding: 20px 20px;
 }
 
-nav a {
+h1 {
     font-family: 'Inter', 'Noto Sans KR', sans-serif;
-    margin-right: 24px;
-    text-decoration: none;
-    color: #6b6b6b; /* 💡 글자색을 약간 부드러운 회색으로 변경 */
-    font-size: 0.95rem;
-    font-weight: 500; /* 너무 두꺼운 볼드 대신 정갈한 중간 두께로 */
-    transition: color 0.2s ease;
-}
-
-nav a:hover {
-    color: #03a87c; /* 💡 아까 메인 본문의 카테고리 색상과 통일 (딥그린) */
-}
-
-.highlight-red {
-  color: red !important;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.date {
-    color: #888;          /* 약간 흐린 회색으로 */
-    font-size: 0.9em;     /* 본문보다 살짝 작게 */
-    text-align: right;    /* 오른쪽 정렬 */
-    margin-top: 30px;     /* 본문과 간격을 충분히 줌 */
-    border-top: 1px solid #eee; /* 위에 가벼운 선을 하나 넣으면 구분감이 좋아 */
-    padding-top: 10px;
+    color: #1a1a1a;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
 }
 
 p {
@@ -150,77 +35,225 @@ p {
     margin-bottom: 1em;
 }
 
-section {
-    margin-bottom: 20px; /* 각 섹션 간의 여백을 넉넉히 줌 */
-    clear: both;         /* 이 섹션이 끝나면 앞의 정렬을 해제하고 아래로 내려감 */
-    overflow: hidden;    /* 내부의 flex 요소가 밖으로 튀어나가지 않게 함 */
-    height: auto;
+/* 본문 중 강조용 (빨간 밑줄 문단) */
+.highlight-red {
+    color: red !important;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
-section h2 {
-    font-family: 'Noto Sans KR', serif; /* 예: 명조체 계열로 변경 */
-    color: #1A365D;
-    font-weight: 700;
-}
 
-footer p {
+/* ==========================================================================
+   메뉴바 (index.html, 카테고리 페이지)
+   ========================================================================== */
+nav {
     font-family: 'Inter', 'Noto Sans KR', sans-serif;
-    text-align: center;      /* 글자 가운데 정렬 */
-    padding: 10px 0;         /* 위아래 여백을 넉넉히 */
-    margin-top: 20px;        /* 본문과의 거리 확보 */
-    font-size: 0.85rem;      /* 글자 크기를 살짝 작게 */
-    color: #888;          /* 연한 회색으로 부담스럽지 않게 */
-    /* border-top: 1px solid #eee; /* 위쪽에 가벼운 선 추가 */
+    background-color: transparent;
+    padding: 10px 0 20px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #f1f3f5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-body, p, .post-content {
-    font-family: 'Nanum Myeongjo', serif;
-    line-height: 1.75; /* 명조체는 줄 간격이 넓어야 훨씬 예뻐 */
-    font-size: 1.05rem;
-    color: #333;
-    letter-spacing: -0.00em;
+nav a {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    margin-right: 24px;
+    text-decoration: none;
+    color: #6b6b6b;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
+nav a:hover {
+    color: #03a87c; /* 카테고리 색상과 같은 딥그린 */
+}
+
+
+/* ==========================================================================
+   메인 페이지 (index.html)
+   ========================================================================== */
+section {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* 소개 영역 */
+.info {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    font-size: 0.8em;
+    border-bottom: 1px solid #eee;
+}
+
+/* 최근 글 목록 */
+.post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* 링크 영역을 카드 전체로 확장 */
+}
+
+.post-item {
+    padding: 32px 0;
+    border-bottom: 1px solid #f1f3f5;
+}
+
+.post-item:hover .post-title {
+    opacity: 0.8; /* 마우스를 올리면 제목만 살짝 흐려짐 */
+}
+
+.post-meta {
+    display: flex;
+    gap: 12px; /* 카테고리와 날짜 사이 간격 */
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.post-category {
+    color: #03a87c; /* 포인트 딥그린 */
+    font-weight: 600;
+}
+
+.post-date {
+    color: #8b95a1;
+}
+
+.post-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+/* 본문 요약 (3줄까지만 보이고 말줄임표) */
+.post-summary {
+    font-size: 1.0rem;
+    line-height: 1.65;
+    color: #555555;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* ==========================================================================
+   글 페이지 (posts/*)
+   ========================================================================== */
+/* 푸터의 Written / Posted 날짜 */
 .meta-date {
     margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 0.85rem;
     color: #666;
-    margin-bottom: 10px;
     justify-self: right;
 }
 
 .date {
-    font-weight: bold;      /* 글자 굵게 */
-    color: #2c3e50;         /* 색상 강조 */
-    font-family: monospace; /* 날짜 느낌이 나도록 고정폭 글꼴 사용 */
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #2c3e50;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
 }
 
-/* 📸 포스트 내부 이미지 스타일 */
+/* 사진 한 장 */
 .post-image {
-    display: block;          /* 이미지를 한 줄을 통째로 차지하는 블록으로 변경 */
-    max-width: 100%;         /* 💡 중요: 본문 폭(720px)보다 이미지가 크더라도 화면 밖으로 깨지지 않게 방지 */
+    display: block;
+    max-width: 100%;   /* 화면보다 크면 줄어들어 밖으로 안 깨짐 */
     width: 400px;
-    height: auto;            /* 가로 비율에 맞춰 세로 높이 자동 조절 */
-    margin: 32px auto;       /* 💡 위아래로 32px 여백을 주고, 좌우 'auto'로 중앙 정렬 */
-    border-radius: 8px;      /* 이미지 모서리를 미세하고 부드럽게 깎아줌 */
+    height: auto;
+    margin: 32px auto; /* 위아래 여백, 좌우 중앙 정렬 */
+    border-radius: 8px;
 }
 
-/* 📸 이미지 두 장을 감싸는 가로 상자 */
+/* 사진 여러 장을 가로로 나란히 */
 .image-row {
-    display: flex;          /* 💡 자식 요소들을 가로로 나란히 정렬하는 치트키 */
-    gap: 16px;              /* 사진과 사진 사이의 은은한 간격 (여백) */
-    max-width: 100%;        /* 본문 폭(720px)을 넘지 않도록 제한 */
-    margin: 32px auto;      /* 위아래 본문과의 여백을 주고 중앙 정렬 */
+    display: flex;
+    gap: 16px;
+    max-width: 100%;
+    margin: 32px auto;
     align-items: flex-start;
     justify-content: center;
 }
 
-/* 📸 가로 상자 안의 이미지들에게만 적용되는 스타일 */
 .image-row img {
-    width: auto;    
-    height: 300px;  
-    object-fit: cover;      /* 💡 혹시 두 사진의 원래 세로 높이가 다르다면, 삐져나오지 않게 예쁘게 크롭해줌 */
-    border-radius: 6px;     /* 모서리를 살짝 깎아 정갈함 추가 */
-    max-width: 50%;         /* 💡 [방어막] 3장이니까 한 장당 상자 크기의 30%를 절대 넘지 못하게 제한 */
-    object-fit: cover;
+    width: auto;
+    height: 300px;
+    max-width: 50%;    /* 사진 한 장이 상자 폭의 절반을 넘지 않게 제한 */
+    object-fit: cover; /* 세로 높이가 달라도 비율을 유지하며 잘라냄 */
+    border-radius: 6px;
+}
+
+
+/* ==========================================================================
+   푸터 (저작권 문구)
+   ========================================================================== */
+footer p {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* ==========================================================================
+   모바일 / 좁은 화면 (폭 600px 이하)
+   ========================================================================== */
+@media (max-width: 600px) {
+    /* 제목이 두 줄로 넘치지 않게 약간 줄임 */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    /* 좁은 화면에서는 양쪽 정렬이 단어 사이를 과하게 벌리므로 왼쪽 정렬 */
+    p {
+        text-align: left;
+    }
+
+    /* 메뉴: 손가락으로 누르기 쉽게 터치 영역을 키움 */
+    nav {
+        margin-bottom: 24px;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 8px 0;
+        margin-right: 18px;
+    }
+
+    /* 메인 페이지 글 카드 */
+    .post-item {
+        padding: 24px 0;
+    }
+
+    .post-title {
+        font-size: 1.3rem;
+    }
+
+    /* 사진 여러 장: 가로 배치 대신 세로로 쌓아서 잘리지 않고 크게 보이게 함
+       (글 HTML에 인라인으로 박힌 height: 300px을 덮어쓰려고 !important 사용) */
+    .image-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin: 24px auto;
+    }
+
+    .image-row img {
+        width: auto;
+        height: auto !important;
+        max-width: 100%;
+    }
+
+    .post-image {
+        margin: 24px auto;
+    }
 }
