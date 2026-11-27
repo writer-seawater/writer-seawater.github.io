@@ -10,6 +10,11 @@ html, body {
     padding: 0;
 }
 
+/* 스크롤바 자리를 항상 확보: 짧은 글과 긴 글에서 내용 위치가 달라지지 않게 함 */
+html {
+    scrollbar-gutter: stable;
+}
+
 body {
     font-family: 'Nanum Myeongjo', serif;
     font-size: 1.05rem;
