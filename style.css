@@ -128,6 +128,16 @@ section {
     letter-spacing: -0.02em;
 }
 
+/* 시리즈 부제목: 카드 제목 아래에 작게 */
+.post-subtitle {
+    font-size: 0.65em;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #8b95a1;
+    display: block;
+    margin-top: 0.3em;
+}
+
 /* 본문 요약 (3줄까지만 보이고 말줄임표) */
 .post-summary {
     font-size: 1.0rem;
@@ -145,6 +155,16 @@ section {
 /* ==========================================================================
    글 페이지 (posts/*)
    ========================================================================== */
+/* 시리즈 부제목: 글 제목(h1) 아래에 작게 */
+h1 .subtitle {
+    font-size: 0.55em;
+    font-weight: 400;
+    color: #8b95a1;
+    display: block;
+    margin-top: 0.4em;
+    margin-bottom: 8px;   /* 부제목과 밑줄 사이 간격 (밑줄 쪽 기본 간격 5px에 더해짐) */
+}
+
 /* 푸터의 Written / Posted 날짜 */
 .meta-date {
     margin-top: 20px;
@@ -211,6 +231,10 @@ footer p {
     /* 제목이 두 줄로 넘치지 않게 약간 줄임 */
     h1 {
         font-size: 1.5rem;
+    }
+
+    h1 .subtitle {
+        font-size: 0.65em;
     }
 
     /* 좁은 화면에서는 양쪽 정렬이 단어 사이를 과하게 벌리므로 왼쪽 정렬 */
